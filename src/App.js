@@ -49,7 +49,7 @@ function App() {
   function handleCartClearence() {
     setCartItems([]);
   }
-  
+
 
   return (
     <div>
@@ -57,8 +57,8 @@ function App() {
         <Header cartItems={cartItems} />
         <Routes>
           <Route exact path="/" element={<Products handleAddProduct={handleAddProduct} />} />
-          <Route exact path="/signup"  element={<SignUp />} />
-          <Route exact path="/cart"  element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearence={handleCartClearence} />} />
+          <Route exact path="/signup" element={<SignUp />} />
+          <Route exact path="/cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearence={handleCartClearence} />} />
         </Routes>
       </Router>
     </div>
@@ -66,3 +66,5 @@ function App() {
 }
 
 export default App;
+
+
