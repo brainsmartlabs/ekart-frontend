@@ -5,6 +5,8 @@ import Products from './components/frontend/products/Products';
 import SignUp from './components/frontend/signup/SignUp';
 import Cart from './components/frontend/cart/Cart';
 import { useState } from 'react';
+
+
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
@@ -47,20 +49,16 @@ function App() {
   function handleCartClearence() {
     setCartItems([]);
   }
-
+  
 
   return (
     <div>
       <Router>
         <Header cartItems={cartItems} />
         <Routes>
-          <Route path="/" exact element={<Products handleAddProduct={handleAddProduct} />} />
-        </Routes>
-        <Routes>
-          <Route path="/signup" exact element={<SignUp />} />
-        </Routes>
-        <Routes>
-          <Route path="/cart" exact element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearence={handleCartClearence} />} />
+          <Route exact path="/" element={<Products handleAddProduct={handleAddProduct} />} />
+          <Route exact path="/signup"  element={<SignUp />} />
+          <Route exact path="/cart"  element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} handleCartClearence={handleCartClearence} />} />
         </Routes>
       </Router>
     </div>
